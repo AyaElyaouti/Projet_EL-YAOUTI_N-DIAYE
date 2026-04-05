@@ -58,8 +58,8 @@ kubectl apply -f ingress.yaml
 ```
 
 # Comment tester le fonctionnement ?
-Pour vérifier que le service tourne : Accéder à ```bash /```
+Pour vérifier que le service tourne : Accéder à ```/```
 
-Pour voir la liste des tâches : Accéder à ```bash /tasks```
+Pour voir la liste des tâches : Accéder à ```/tasks```
 
-Pour vérifier que les services se parlent : Accéder à ```bash/tasks-with-users```
+Pour vérifier que les services se parlent : Accéder à ```/tasks-with-users```
