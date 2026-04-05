@@ -7,17 +7,19 @@ Au lieu d'avoir un seul gros programme, on a divisé l'application en deux parti
 
 
 # Contenu du projet
-```bash user-service/``` : Le code pour la gestion des utilisateurs.
+```user-service/``` : Le code pour la gestion des utilisateurs.
 
-```bash task-service/``` : Le code pour la gestion des tâches et la connexion à la base de données.
+```task-service/``` : Le code pour la gestion des tâches et la connexion à la base de données.
 
-```bash Dockerfile``` : La "recette" pour transformer le code en image Docker.
+```Dockerfile``` : La "recette" pour transformer le code en image Docker.
 
-```bash deployment.yaml``` : Les instructions pour que Kubernetes lance les programmes.
+```deployment.yaml``` : Les instructions pour que Kubernetes lance les programmes.
 
-```bash service.yaml``` : Le système qui permet aux services de s'appeler entre eux.
+```service.yaml``` : Le système qui permet aux services de s'appeler entre eux.
 
-```bash ingress.yaml``` : La porte d'entrée unique pour accéder à tout le projet.
+```ingress.yaml``` : La porte d'entrée unique pour accéder à tout le projet.
+
+```rbac.yaml``` : Configuration de la **sécurité** et des droits d'accès.
 
 # Le fonctionnement
 1. La mise en boîte (Docker)
