@@ -1,4 +1,4 @@
-1. Présentation du Projet
+# Présentation
 L'objectif de ce projet est la mise en place d'une application distribuée composée de deux microservices (user-service et task-service). L'architecture repose sur des principes de scalabilité, de découplage et de haute disponibilité grâce à l'orchestration via Kubernetes.
 
 Au lieu d'avoir un seul gros programme, on a divisé l'application en deux parties indépendantes :
@@ -6,19 +6,20 @@ Au lieu d'avoir un seul gros programme, on a divisé l'application en deux parti
 - Service Tâches : On l'utilise pour créer des choses à faire et les enregistrer dans une Base de Données (PostgreSQL).
 
 
-#Contenu du projet
-user-service/ : Le code pour la gestion des utilisateurs.
+# Contenu du projet
+```bash user-service/``` : Le code pour la gestion des utilisateurs.
 
-task-service/ : Le code pour la gestion des tâches et la connexion à la base de données.
+```bash task-service/``` : Le code pour la gestion des tâches et la connexion à la base de données.
 
-Dockerfile : La "recette" pour transformer le code en image Docker.
+```bash Dockerfile``` : La "recette" pour transformer le code en image Docker.
 
-deployment.yaml : Les instructions pour que Kubernetes lance les programmes.
+```bash deployment.yaml``` : Les instructions pour que Kubernetes lance les programmes.
 
-service.yaml : Le système qui permet aux services de s'appeler entre eux.
+```bash service.yaml``` : Le système qui permet aux services de s'appeler entre eux.
 
-ingress.yaml : La porte d'entrée unique pour accéder à tout le projet.
+```bash ingress.yaml``` : La porte d'entrée unique pour accéder à tout le projet.
 
+# Le fonctionnement
 1. La mise en boîte (Docker)
 Chaque service est placé dans un conteneur Docker. De cette façon, on s'assure que le programme marche partout de la même façon, peu importe l'ordinateur.
 
@@ -35,22 +36,28 @@ Pour ne pas perdre les données, on utilise PostgreSQL. Les tâches sont enregis
 L'Ingress sert de guide. Quand on tape une adresse, c'est lui qui décide si on est envoyé vers le service des utilisateurs ou vers celui des tâches.
 
 
-Comment lancer le projet ?
-Démarrer Minikube : minikube start
-
-Activer l'entrée (Ingress) : minikube addons enable ingress
+# Comment lancer le projet ?
+Démarrer Minikube : 
+```bash
+minikube start
+```
+Activer l'entrée (Ingress) : 
+```bash
+minikube addons enable ingress
+```
 
 Lancer tous les composants :
-
+```bash
 kubectl apply -f user-service/
 
 kubectl apply -f task-service/
 
 kubectl apply -f ingress.yaml
+```
 
-Comment tester le fonctionnement ?
-Pour vérifier que le service tourne : Accéder à /
+# Comment tester le fonctionnement ?
+Pour vérifier que le service tourne : Accéder à ```bash /```
 
-Pour voir la liste des tâches : Accéder à /tasks
+Pour voir la liste des tâches : Accéder à ```bash /tasks```
 
-Pour vérifier que les services se parlent : Accéder à /tasks-with-users
+Pour vérifier que les services se parlent : Accéder à ```bash/tasks-with-users```
